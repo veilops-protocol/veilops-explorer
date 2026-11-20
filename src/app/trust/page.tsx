@@ -77,7 +77,7 @@ bash scripts/reproduce.sh    # compare dist/SHA256SUMS with the release`}</Code>
           </Row>
 
           <Row n="03" title="Solana devnet anchors" status={anchors.length ? <StatusBadge status="verified">{anchors.length} anchors on devnet</StatusBadge> : <StatusBadge status="pending">first anchors pending</StatusBadge>}>
-            <p>Verified sample records are anchored with SPL Memo transactions carrying <span className="font-mono">veilops:&lt;version&gt;:&lt;proofId&gt;:&lt;sha256(record)&gt;</span>. A daily workflow re-reads every transaction from a public RPC and checks that the memo matches the published record, that the published key signed it, and that the record still verifies.</p>
+            <p>{anchors.length ? 'Verified sample records are anchored' : 'No devnet transactions have been published yet. Once they are, verified sample records will be anchored'} with SPL Memo transactions carrying <span className="font-mono">veilops:&lt;version&gt;:&lt;proofId&gt;:&lt;sha256(record)&gt;</span>. A daily workflow re-reads every transaction from a public RPC and checks that the memo matches the published record, that the published key signed it, and that the record still verifies.</p>
             <div className="border-t border-line/70">
               <Kv k="cluster" v="devnet (test network, no real value)" />
               <Kv k="anchor key" v={<a className="underline decoration-line underline-offset-4 hover:decoration-jade" href={`https://explorer.solana.com/address/${anchorsFile.signer}?cluster=devnet`} target="_blank" rel="noreferrer">{anchorsFile.signer}</a>} />
