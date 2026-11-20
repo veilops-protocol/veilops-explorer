@@ -65,6 +65,17 @@ export default function GitHub() {
             <p className="mt-5 text-[13px] leading-relaxed text-mute">No stars, forks, releases or audits are shown here because none exist yet. That is the point.</p>
           </div>
         </div>
+        <div className="mt-16 border border-line p-6 sm:p-8">
+          <div className="label mb-5">How to check this project is genuine</div>
+          <ol className="grid gap-4 text-[14px] leading-relaxed text-paper/80 md:grid-cols-2">
+            <li><span className="font-mono text-jade">01</span> The organization <span className="font-mono">github.com/{SITE.githubOrg}</span> links to veilops.tech, and this site links back to it, both ways.</li>
+            <li><span className="font-mono text-jade">02</span> Clone the monorepo and run <span className="font-mono">npm test</span>: 31 unit, integration and tamper tests exercise the real cryptography.</li>
+            <li><span className="font-mono text-jade">03</span> Every proof in the explorer can be re-verified in your browser with the same open-source code, and the deliberately tampered samples fail.</li>
+            <li><span className="font-mono text-jade">04</span> CI, CodeQL and dependency audits run in public on every change. Their badges link to the actual runs.</li>
+            <li><span className="font-mono text-jade">05</span> Security reports go through GitHub private advisories. See <a className="underline decoration-line underline-offset-4" href="/.well-known/security.txt">security.txt</a>.</li>
+            <li><span className="font-mono text-jade">06</span> We state what is missing: no external audit, no mainnet deployment and no npm packages yet. Treat any claim otherwise as not coming from this project.</li>
+          </ol>
+        </div>
         <div className="mt-10 flex flex-wrap gap-3">
           {live && <LinkButton href={githubUrl('veilops')} external>Open the monorepo</LinkButton>}
           <LinkButton href="/docs" variant={live ? 'ghost' : 'primary'}>Read the docs</LinkButton>
