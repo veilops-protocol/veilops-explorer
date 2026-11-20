@@ -28,8 +28,8 @@ export const COMPONENTS: { key: string; name: string; status: Status; note: stri
   { key: 'proof', name: 'Range proof (veilops-range-v1)', status: 'experimental', note: 'Real zero-knowledge proof of 0 ≤ amount ≤ limit on a Pedersen commitment. Not audited, not succinct.' },
   { key: 'attestation', name: 'Record attestation', status: 'implemented', note: 'Ed25519 signature by the publishing operator. Proves origin, not privacy.' },
   { key: 'explorer', name: 'Public proof explorer', status: 'implemented', note: 'Real verification in your browser over a SAMPLE dataset. No live network indexer yet.' },
-  { key: 'solana', name: 'Solana anchoring', status: 'experimental', note: 'SPL Memo anchors tested on devnet: 6 records anchored and re-verified daily. No mainnet, no on-chain program.' },
+  { key: 'solana', name: 'Solana anchoring', status: 'experimental', note: 'SPL Memo anchors tested on devnet: 6 records anchored and re-verified daily. No mainnet.' },
   { key: 'confidential-transfers', name: 'Token-2022 confidential transfers', status: 'planned', note: 'Integration with the confidential transfer extension where supported.' },
-  { key: 'program', name: 'On-chain verifier program', status: 'planned', note: 'An Anchor program for record registration. Not written yet.' },
+  { key: 'program', name: 'On-chain verifier program', status: 'experimental', note: 'veilops-verifier verifies zero-knowledge range proofs inside a Solana program on devnet: 3 proofs verified, 2 forgeries rejected. Not audited, no mainnet.' },
   { key: 'wallet', name: 'Wallet connection', status: 'planned', note: 'Hidden until there is something real for a wallet to sign.' },
 ];

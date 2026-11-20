@@ -1,0 +1,188 @@
+{
+  "cluster": "devnet",
+  "program": "4fWHkQi8HgWPvw5fS4vudFGn6u6eZvdRKwfQqBgVexTZ",
+  "proofSystem": "veilops-range-v2",
+  "operator": "9kpS3zvBWmA5jtatwPd4HvbJ1PgazbsBpxQA38grYQie",
+  "note": "Amounts are hidden: only Pedersen commitments and zero-knowledge proofs are on-chain. Devnet only; the program is experimental and not audited.",
+  "verified": [
+    {
+      "operationId": "op_008529ad9010adbb",
+      "policyId": "pol_c7a4924920225836",
+      "policyName": "Vendor payments",
+      "category": "vendor",
+      "asset": "USDC",
+      "maxAmount": 15000000,
+      "rangeBits": 32,
+      "commitment": "84d46296dcc7af6abe8d69186dc9b4d94bcf5e0883e166ce42475c57cc52f346",
+      "proofId": "prf_adbb1af04386dce5f8d1",
+      "proofBytes": 10242,
+      "record": "7TX5kD11LPgvEkTFsRzV4iRgfxVmJkFXiUhp3KbrBsaw",
+      "verification": "9pTjxHpSDoUfgM2ygKsxJyZfVkFPVCLPqU7iBpEVdtjg",
+      "buffer": "EaAaKKZsb8ZEyNjPe3jbEWnf125s5HiBGxDeKwV4jSzB",
+      "transactions": {
+        "begin": "4Z5fvDpQpHh6MXHtn6hu6ehSfwdCqBHpSvBmy6LnufuB6gUXvgLe9BybLBQYSa6mMsUYmToEadSS1g6WjtAZ2MCq",
+        "writes": [
+          "28FMGHMdVSJDUo82nimyyPd7qbvkoeQUack2r3ZnJZjzbnFGUQD9qZ1Pyu8ri83Kk42n3Bxc3NN1HzYmqf95h3My",
+          "3PfZZHZ3UiCQMsPWByqsF86u8wo6oTxqhGKSp4GuDmN5YCbpBYJ2xsGzTSYHFBnk4GiCJ5oWB9Ev9ybnRg1g6NYM",
+          "4JuHxQwqZhHAQsbokM5rQCYGijoGmmUmV74qGhZ2oDbH9rbwWzMjKYJJsSh8R9UJQMiL3YAYhMPKsnxvoPZmSdNA",
+          "51j4vtYQVUg2iMX3M1GQRaaXHLQK6NXN8orivxrmqRxWrkaiGbm1vJh3X1HgkLDXCJExqgL3ijEupJu4QTWYG4P",
+          "5KRWjtu8bkA4LMCoM2SnF9LY5Yp3Sww6YCBGcsFNgr44Yw1p84nqJEM8Kx2HJLc6Ltjtq5dmbEdEQqZAPbywhdDe",
+          "5K63jWTVLbs8wwFTuWCqahL3GPELV4vbfG8w62K1T23xpiNqwJymj2PboXtL5wXVTeBtf1JkKm2Awfsx8ySFZDUx",
+          "V1Pb9vhZd3GPLyytLeUYGCw17nTkyffijALMsKaqMJ24LVTqZhQEKEpncRmJ2qeus9mmBaVwWCVbqvgG8fLgJBH",
+          "38iEETN1XPen9XoTZ8uq8N5RKo6y3V1phZ4QC3J4r81PQGsZqUBRXqGt6icmJ8MXDWg7CGDUhaTNzM1o2F1G6GhW",
+          "5o3sv9pCkCYvNkMeycG2WSdYGQ4VC6uJ64N5mYXJ4ihvokt97mKkwoLpLSnViiTdNDp5rBdt1MWpzAQpaMKH94MQ",
+          "nZG8ARuvNaFmSaX8yVSdWe5Fa7nCRVBsGwPvaKUWgJqkLxkXyTH98rhuXKHSjdobemVbDrzv7NicW7gTChUsXW1",
+          "32jPFSyD5LDnhghycjdDrb6cxYAQnn9jP4zc3pnceWMJBazfFY5JA1FRKJzUWaffk3T62FVmDCMrXta8AAHiBdA9",
+          "4bhoc348D3GBuqHbGGMZ3hWTqQz7hhJYDZKVyAbHyBEY325iCvipXfnQH7q87isN3MAdW82YfzNXLmpisftPs17Q"
+        ],
+        "verifies": [
+          {
+            "signature": "3yLHkV5ccWvxtZLT2BX13TyxTpDQav6k1mRCV7DdXsutTZKf2fu8CcNjZkEVbDW5bqgbtYXPgVWxaVdMZjNjQLVg",
+            "range": "lower",
+            "bits": 32,
+            "computeUnits": 1117041
+          },
+          {
+            "signature": "2aEffid1pL8e3x5tivuhKzopWSkopP2g7HLS7QGTt2NtdgE3vumtG8tCo28zMLADLznHB4E2RhHHWUaaGqqtLzFw",
+            "range": "upper",
+            "bits": 32,
+            "computeUnits": 1117008
+          }
+        ],
+        "finalize": "4zJbxJmL6Qz41YQ6hZEbD6QuHYcugvfZtBCWnKqmjUsm6D5eDTg5ZC24HrYg1gJa9NhgV5eJN7Fd1ZvkXWksCtq5"
+      },
+      "finalizeComputeUnits": 76135,
+      "totalTransactions": 16
+    },
+    {
+      "operationId": "op_c6b04de09cce03ae",
+      "policyId": "pol_70bcc42a5d743d0c",
+      "policyName": "Contributor payroll",
+      "category": "payroll",
+      "asset": "USDC",
+      "maxAmount": 2500000,
+      "rangeBits": 24,
+      "commitment": "84e0d320d520230fa22aa5b664ab9319008970ee288d081340aee04510f7f346",
+      "proofId": "prf_fa312874851384228ba7",
+      "proofBytes": 7682,
+      "record": "2bHn6GziFaUNLsnbmyrLUfG11kpZJ5CcgoJnDFcFmMG7",
+      "verification": "FVQ7CkAg4FBEhJuLZ7yesXG8e6wQtMfU2pcNk9kkvWP1",
+      "buffer": "DMpZpNpL6jgfB2mrJDa3iJUkYaxAGAzRcioj4dssMrfj",
+      "transactions": {
+        "begin": "2xdQsBToPm4gncDtuXjS5aWtYcUqFkKm1EQZb6YHVTgPwZd6uqRiGhU3qpFTZ3GPa6GCwK1iJxyRhnpWP3p3qxDU",
+        "writes": [
+          "2J1BTBe9mGBgJFjeNDL38NXKntmpRaiqGDxxJdWpDGxcheTDeasZ6Kue86qGPAqHbsboUdqWLDVFusBsEfzjzMJv",
+          "3rbTegDtKQ3SYA695RZ3KmdXuzNXH6dSbg1GBTLLjPS4MNCaKNHqy9qTRXy2XmxAB3w5PaottB1J6q9fTrMMEosq",
+          "2ucGMUN4FtJSe8ridt4E5K5Vo1R4GVX7t7Zvfje5fff8pEZCvyaiWXNyo6SaRGhBHwHGnTexPrkcTu3ApR9fxayw",
+          "3nNCZvkAMXTF7CRGcp5G9C5v2j5ejv9ZxxVGY8kvWBgvVbiac526Xf89ruV4vPhVWLb9a5cuVkiTBFUTRDL7iqWJ",
+          "2SQW8m8aecvNd2kpxEsuttuJANiTBJ9R1KTW1rLLBjSmhVG2ZpRK7Ussjwwvd4fAYKSx7GGPiGN72GorsAyyqBVC",
+          "2oWGzMDmxDN3KRKovXrL6K5UxJJTRw89Vdj7WjoxCW7nzdVTgUwi7SwcZWADo8pEsxt1MzmMB5MQ3ciUHJD5aa1v",
+          "2hk1weJoRhA1jhd4Gv7ABG5cbV7f5ag8tkHiPZxy463vCjj8w2wTML9vbe87qVcYknY9pXpGr72ZqutHWkaGQ6qC",
+          "3JA2LAh5pZZHLuUTK9C1QkSwxcBYdzDZfDJvzDzBAcBfGKhUzb98eNzKgXheZyXm8PPYUs8HiuGDAffuuMjzikjy",
+          "Yc7mThXo3xG6ah3GAecPeX2DMkdVZhp9Je5upT8uoci7rRXZTF7k2aepVkbvYpidLtiVLnwdL8Bnqm2kb3UqsRf"
+        ],
+        "verifies": [
+          {
+            "signature": "39PXVKxvx8cz2tP5hotUyH8LnceeW5cradZNZa1yP9s14RYBeLNXjWJfR1Zxej1jnuaygF3XquEPuY64E542B7d5",
+            "range": "lower",
+            "bits": 24,
+            "computeUnits": 839011
+          },
+          {
+            "signature": "5SRzFuuyCyy1cv74xyGqNfoW2zTdr1zBswiqWKHgN7Uzkn5ZegyEz2HYNXaMfUhfyZL5PkXjeRew82RPsqMDEghw",
+            "range": "upper",
+            "bits": 24,
+            "computeUnits": 839055
+          }
+        ],
+        "finalize": "2tB4YcM2DSGEYaWDxyzrWtC9Rf5L8GtFEdhSbbYmLHan3Yx6u1i34VSdsCpHrASrBsW3V2HyEv1r9sCs4dqK7Wwi"
+      },
+      "finalizeComputeUnits": 67573,
+      "totalTransactions": 13
+    },
+    {
+      "operationId": "op_f6bd2847e9d24acf",
+      "policyId": "pol_9140a4b633afe136",
+      "policyName": "Treasury rebalancing",
+      "category": "treasury",
+      "asset": "USDC",
+      "maxAmount": 250000000,
+      "rangeBits": 40,
+      "commitment": "8e40fe5263773a53d287c83591d1f4e20575feec5cf576ca64e63cd0f881bc1e",
+      "proofId": "prf_692e2d74d2d5a3e6af4e",
+      "proofBytes": 12802,
+      "record": "5MYpmibYECGoFWSWwwDaMzRefxREcRsp5toU1uoE8fXq",
+      "verification": "4FNbG8TjuRTp1vLutcjr9o5Lj6HwhjB7SzBCNFdX5gnN",
+      "buffer": "5fMVsJ3Db9mG8hq5qAYwW6oQqsh6B9Qau1HwQy4Wv6K9",
+      "transactions": {
+        "begin": "3EkFbP5FsjMHE5vdRerYmV3m7sMN33wDztnUrM427nqJ27S6ec5mhEfmfSHeg21ySp5ciUqg5h9bpAQZ74pSposw",
+        "writes": [
+          "2unKEChMqL6XGKt7XTG5FtXaf1zy3K4GgtuaRr4C3YkfVR1cawdNLbLGsrUyVHmDPCuqcZAJnrefLwnuyYru8je6",
+          "cankHdxM57krmTuzjU6aNwMqmRC1ZMeydKogrxHVpUtUFSWrYf6EEhuS25MUDfZUWW5EWGUwXmqYL2gTpGHsHNP",
+          "2wR38ViRo4qC3C5b8Seb41EqPn9DrX7vbqctoW33irrueY3WHBDcXfEFp3ydhHLATHgp1oRZE1zWkrzjmKvfCo4d",
+          "4to2NRTCg6MoFG9gxDp7TjuPDhE1wnLgvHC4uXgtjydEJXkGaGLAme3gkpsLHH7AZo56Q8GQ1vqm9QPpdVk5jaCq",
+          "cBrSi5J6yQ9h1LBNzusuKGEr876txhEUp4RX2r24k7rvxJNqLJdcHWM7bMYbpFTCVEo8Psa8h6pjnHYX436F41Y",
+          "2F2ov5DcYdAxtBAM2LEBpXo4q3qz2JB3apJA8YgewU6SHUAsb5C1QWksxUoLUHdpgc85RWXeAuCsXmMhCXP3Fcqi",
+          "4kkcejBRRt8yysFgLiWvtehHkUScvtsySZRw4JkkV58SgMSxQYSvwjnjRhEwhvLPx1WMMFoBAkXA9PCuN77R6awX",
+          "5kGSwoTj4xduZ1rfA3ZLDPvCrW1fDx4D1PYj3AQMFEUPoDtYufjSQS8QwjQz6M2iFqnwvQ4w2qHKQvqWCVaJRupT",
+          "TKYsKY9wRjYSrusk98dqtDUsdySbyTRe5xGp6gmoz96DybMncaQ4VYCsYfxNuxYMgBzJJ62A3Lh37RJzZUEgpcr",
+          "4wViGaUCER1jdLxa5A6aFkukjja8n6MwdxNrWSfewHBzsYzAieLrZHtCdfcfKU3xE1WDXWAmP4Kwn41MLwnajQY9",
+          "2GsUhd6UJiFbpyCYFX4sgU5BGXzZnciyFdiLE4NAbN5QgmbAH7FCYwRWZqNz81zTfDHbfpdeM63qggo7gRKEdJif",
+          "3bGgeTy8i11FWV618HoZ99fVCsMWLA8QT3extUffp7dSvSYT4eiUVZBh7kMaFsAKkiCA6wmEYK75yEBuQndyf96K",
+          "36pV49hEdigVPr4ve32FbcfNZTckCsMequaJCh8zSe2BriVJd6xuAq46XVcxxR2wSESEodH5kiN7keGGtA4gq5T4",
+          "618oY9x2pjJG2XJR2HbvojYnhJaC3VaDtn5fvGf7T74cqeTKLPw2chBPdegD33Dp9V36vC53QwadcuYUZY5EezKV",
+          "3a71J997AS8GFdduqwEPE2LtnuF968t6HQFxvDJWcNubuSnmgAHM3Ve16oLo7ZCBf9HC25kuEx684ep2HgBTa97"
+        ],
+        "verifies": [
+          {
+            "signature": "4LdBypgYCX7hDCyokEqUjBTkmyFofp9eaKPcKLNFpErvFeygUzDLo63uRU7Q8HTAD46VbSSnPQ48NVvVb3VxXmD4",
+            "range": "lower",
+            "bits": 32,
+            "computeUnits": 1116998
+          },
+          {
+            "signature": "2ofBte465Cj4E6C8NtdBpyv6ofkshHURC2xYbWvKRebpRD7xUQwEcRTRVYYvkp7VLQy5sffXEx289BoAj9GSYEnt",
+            "range": "lower",
+            "bits": 8,
+            "computeUnits": 282911
+          },
+          {
+            "signature": "49ScZTHnxGvpbX8zoegL2YyBCDVp5JiDHAzszBkLvRst4y4fXAD9uBo9cwwLP5v9nRfTZarpv5gYe2yoCJKsEEqh",
+            "range": "upper",
+            "bits": 32,
+            "computeUnits": 1116965
+          },
+          {
+            "signature": "54upBQoa4h2pyKJJ1u7whijtduybhP79HdkoYdVxGPaztRU7bZNg2wSTKTE852Zwc5hNRXq8zHPauMr1piSvAiUG",
+            "range": "upper",
+            "bits": 8,
+            "computeUnits": 282972
+          }
+        ],
+        "finalize": "5Y22t12rXEyjUotYuHPTdu9dFeHFGpAws1tyetCn74mSkr6wqaMQSMvFZZEmTC6CKnbBx2Rbf5n2mFVgRABUrt5U"
+      },
+      "finalizeComputeUnits": 93739,
+      "totalTransactions": 21
+    }
+  ],
+  "rejected": [
+    {
+      "kind": "tampered-proof",
+      "description": "A valid proof with a single bit flipped in one response scalar.",
+      "operationId": "op_7bb026359f331848",
+      "buffer": "4cbgBa6GnqHA9PMaw73BtcpDQ2eYGE2oto9Qh31RCz7C",
+      "failedSignature": "4JKAtPJTWfN5NZwqf1zH9u3x1EoU32andnwvjDTHixS2gRswW88D7QhbuwYRzLKrWZuyUVnKb4E5pXz1Wr7bvVUQ",
+      "programError": "Program log: AnchorError thrown in programs/veilops-verifier/src/lib.rs:192. Error Code: BitProofInvalid. Error Number: 6013. Error Message: bit proof failed: challenge mismatch.",
+      "recordExists": false
+    },
+    {
+      "kind": "lowered-limit",
+      "description": "An honest proof for limit 15,000,000 presented as if it proved the amount is under 100,000.",
+      "operationId": "op_6995d6bf84a6db25",
+      "buffer": "5r6mEc774QPRrzauRknzuMvFuJRyUUaDjedGwSy8kNYh",
+      "failedSignature": "43vnKWv8sJLXSFJ6RaSs7Mh1QYZhEeZXfrDAHq8Ff7ZQg15RLxdQ99nknoNUiSuUzRer7VmVNyTSSZNDMQ16pHiP",
+      "programError": "Program log: AnchorError thrown in programs/veilops-verifier/src/lib.rs:192. Error Code: BitProofInvalid. Error Number: 6013. Error Message: bit proof failed: challenge mismatch.",
+      "recordExists": false
+    }
+  ]
+}

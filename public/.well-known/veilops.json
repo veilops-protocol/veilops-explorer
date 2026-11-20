@@ -11,10 +11,24 @@
     "https://github.com/veilops-protocol/veilops-docs"
   ],
   "maintainers": [
-    { "github": "veilopsonline", "commitSigningKey": "SHA256:0q/tLTLWz3mdlXFnfCcJbDYeJ7nHnGu37TaBa/h96m8", "keyType": "ssh-ed25519" }
+    {
+      "github": "veilopsonline",
+      "commitSigningKey": "SHA256:0q/tLTLWz3mdlXFnfCcJbDYeJ7nHnGu37TaBa/h96m8",
+      "keyType": "ssh-ed25519"
+    }
   ],
   "security": "https://github.com/veilops-protocol/veilops/security/advisories/new",
-  "solana": { "cluster": "devnet", "anchorKey": "9kpS3zvBWmA5jtatwPd4HvbJ1PgazbsBpxQA38grYQie", "mainnet": null },
-  "social": { "x": null, "telegram": null, "discord": null },
+  "solana": {
+    "cluster": "devnet",
+    "anchorKey": "9kpS3zvBWmA5jtatwPd4HvbJ1PgazbsBpxQA38grYQie",
+    "verifierProgram": "4fWHkQi8HgWPvw5fS4vudFGn6u6eZvdRKwfQqBgVexTZ",
+    "verifierUpgradeAuthority": "9kpS3zvBWmA5jtatwPd4HvbJ1PgazbsBpxQA38grYQie",
+    "mainnet": null
+  },
+  "social": {
+    "x": null,
+    "telegram": null,
+    "discord": null
+  },
   "note": "Any channel not listed here is not official. Changes to this file are only valid in a signed commit to veilops-protocol/veilops."
 }

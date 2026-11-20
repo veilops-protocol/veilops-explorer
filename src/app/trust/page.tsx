@@ -2,15 +2,20 @@ import type { Metadata } from 'next';
 import { PageHero, Reveal, StatusBadge, LinkButton, Kv } from '@/components/ui';
 import { SITE, githubUrl } from '@/lib/site';
 import anchorsFile from '../../../data/devnet-anchors.json';
+import onchain from '../../../data/onchain-verifications.json';
 import vectors from '../../../../../test-vectors/veilops-range-v1.json';
 
 export const metadata: Metadata = {
   title: 'Trust & verification',
-  description: 'Every way to check VEILOPS yourself: reproducible builds, reference test vectors with an independent second implementation, Solana devnet anchors, build provenance, signed commits and official channels.',
+  description: 'Every way to check VEILOPS yourself: zero-knowledge proofs verified by a Solana program on devnet, reproducible builds, reference test vectors with an independent second implementation, build provenance, signed commits, and exactly what VEILOPS does and does not hide.',
 };
 
 const SIGNING_KEY = 'SHA256:0q/tLTLWz3mdlXFnfCcJbDYeJ7nHnGu37TaBa/h96m8';
 const blob = (path: string) => githubUrl(`veilops/blob/main/${path}`);
+
+const PROGRAM_HASH = '593c984b7db2a4c345797844aa803ccb99048f92526619efe01eea86c8431003';
+const sx = (kind: 'tx' | 'address', id: string) => `https://explorer.solana.com/${kind}/${id}?cluster=devnet`;
+const ExtLink = ({ href, children }: { href: string; children: React.ReactNode }) => <a className="underline decoration-line underline-offset-4 hover:decoration-jade" href={href} target="_blank" rel="noreferrer">{children}</a>;
 
 type Anchor = { operationId: string; proofId: string; signature: string; slot: number | null; blockTime: string | null };
 
@@ -100,21 +105,58 @@ bash scripts/reproduce.sh    # compare dist/SHA256SUMS with the release`}</Code>
               </div>
             )}
             <Code>{'npx tsx scripts/devnet-verify.ts   # re-check every anchor yourself'}</Code>
-            <p className="text-mute">This is devnet only. There is no mainnet deployment and no on-chain verifier program yet.</p>
+            <p className="text-mute">This is devnet only. There is no mainnet deployment.</p>
           </Row>
 
-          <Row n="04" title="Build provenance" status={<StatusBadge status="implemented">from v0.1.1</StatusBadge>}>
+          <Row n="04" title="Zero-knowledge proofs verified on-chain" status={<StatusBadge status="verified">{onchain.verified.length} verified · {onchain.rejected.length} rejected on devnet</StatusBadge>}>
+            <p>The <span className="font-mono">veilops-verifier</span> Solana program checks the zero-knowledge range proof <strong className="text-paper">inside the program</strong>. It verifies every bit proof with Solana&apos;s curve25519 and SHA-256 syscalls, then checks the bits add up to the commitment. A <span className="font-mono">Record</span> account exists only for a proof that fully verified. The amount itself never goes on-chain.</p>
+            <div className="border-t border-line/70">
+              <Kv k="program" v={<ExtLink href={sx('address', onchain.program)}>{onchain.program}</ExtLink>} />
+              <Kv k="deployed binary" v={<>sha256 {PROGRAM_HASH.slice(0, 16)}… byte-identical to the reproducible <ExtLink href={githubUrl('veilops/actions/workflows/program.yml')}>Program build</ExtLink></>} />
+              <Kv k="proof system" v="veilops-range-v2 (SHA-256 transcript, same statement as v1)" />
+              <Kv k="cost" v="~35k compute units per bit proof; a 32-bit policy is 16 transactions in total" />
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[34rem] text-left font-mono text-[12px]">
+                <thead className="text-mute"><tr><th className="py-2 font-normal">operation</th><th className="py-2 font-normal">public limit</th><th className="py-2 font-normal">on-chain record</th><th className="py-2 font-normal">verified in</th></tr></thead>
+                <tbody>
+                  {onchain.verified.map(v => (
+                    <tr key={v.operationId} className="border-t border-line/60">
+                      <td className="py-2 pr-4">{v.policyName}<div className="text-mute">{v.operationId}</div></td>
+                      <td className="py-2 pr-4">≤ {v.maxAmount.toLocaleString('en-US')} {v.asset}<div className="text-mute">amount hidden</div></td>
+                      <td className="py-2 pr-4"><ExtLink href={sx('address', v.record)}>{v.record.slice(0, 10)}…</ExtLink></td>
+                      <td className="py-2"><ExtLink href={sx('tx', v.transactions.finalize)}>finalize tx</ExtLink><div className="text-mute">{v.totalTransactions} txs</div></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="label pt-2">Cheating attempts, rejected by the chain</p>
+            <ul className="space-y-2">
+              {onchain.rejected.map(r => (
+                <li key={r.operationId} className="border border-line/70 p-3 text-[13px]">
+                  <span className="text-paper">{r.description}</span>
+                  <div className="mt-1 font-mono text-[12px] text-mute">Program error: BitProofInvalid · no record created · <ExtLink href={sx('tx', r.failedSignature ?? '')}>failed transaction</ExtLink></div>
+                </li>
+              ))}
+            </ul>
+            <Code>{`npx tsx scripts/onchain-check.ts      # re-check every record and rejection from chain data
+npx tsx scripts/program-hash.ts --so veilops_verifier.so   # compare the deployed program with a build`}</Code>
+            <p className="text-mute">Devnet only. The program is experimental, not audited, and still upgradable by the maintainer key. <span className="font-mono">program-hash.ts</span> shows the current upgrade authority and binary hash at any time.</p>
+          </Row>
+
+          <Row n="05" title="Build provenance" status={<StatusBadge status="implemented">from v0.1.1</StatusBadge>}>
             <p>Release files are built by GitHub Actions and carry a signed artifact attestation (Sigstore). The attestation proves which workflow run, repository and commit produced a file, so nobody can swap in a hand-made tarball unnoticed.</p>
             <Code>{'gh attestation verify veilops-proof-engine-0.1.1.tgz --repo veilops-protocol/veilops'}</Code>
           </Row>
 
-          <Row n="05" title="Signed commits" status={<StatusBadge status="implemented">from v0.1.1</StatusBadge>}>
+          <Row n="06" title="Signed commits" status={<StatusBadge status="implemented">from v0.1.1</StatusBadge>}>
             <p>Commits and tags on <span className="font-mono">main</span> are signed with the maintainer&apos;s SSH key and show <em>Verified</em> on GitHub. The project is maintained pseudonymously, so this key, not a name, is what ties every change to the same maintainer.</p>
             <div className="border-t border-line/70"><Kv k="maintainer" v={<a className="underline decoration-line underline-offset-4" href="https://github.com/veilopsonline">@veilopsonline</a>} /><Kv k="signing key" v={SIGNING_KEY} /></div>
             <p className="text-mute">The initial import on 2026-11-20 predates signing and is unsigned. Full history is in the <a className="underline decoration-line underline-offset-4" href={blob('CHANGELOG.md')}>changelog</a>.</p>
           </Row>
 
-          <Row n="06" title="Official channels" status={<StatusBadge status="implemented">one domain, linked both ways</StatusBadge>}>
+          <Row n="07" title="Official channels" status={<StatusBadge status="implemented">one domain, linked both ways</StatusBadge>}>
             <div className="border-t border-line/70">
               <Kv k="website" v={SITE.url.replace('https://', '')} />
               <Kv k="source" v={<a className="underline decoration-line underline-offset-4" href={githubUrl()}>github.com/{SITE.githubOrg}</a>} />
@@ -124,9 +166,43 @@ bash scripts/reproduce.sh    # compare dist/SHA256SUMS with the release`}</Code>
             <p>VEILOPS has <strong className="text-paper">no</strong> official X, Telegram or Discord account yet. Anything else claiming to be official is not, unless it appears here and in a signed commit.</p>
           </Row>
 
-          <Row n="07" title="Independent review" status={<StatusBadge status="planned">not started</StatusBadge>}>
+          <Row n="08" title="Independent review" status={<StatusBadge status="planned">not started</StatusBadge>}>
             <p>The scope, the questions for the reviewer and the known limitations are public in <a className="underline decoration-line underline-offset-4" href={blob('docs/audit-scope.md')}>docs/audit-scope.md</a>. When a review happens, the report will be published unedited, with the reviewer&apos;s name, dates and the commit reviewed.</p>
           </Row>
+        </div>
+
+
+        <div className="mt-20 border-t border-line pt-14">
+          <div className="label mb-4">Privacy scope</div>
+          <h2 className="h-display max-w-[22ch] text-3xl sm:text-5xl">What VEILOPS hides, and what it does not.</h2>
+          <p className="lede mt-6 max-w-3xl">VEILOPS hides <em>amounts</em> and keeps private details encrypted. It does not hide who publishes, when, or which asset. We would rather say this plainly than let anyone assume otherwise.</p>
+          <div className="mt-10 grid gap-px border border-line bg-line md:grid-cols-2">
+            <div className="bg-ink p-6">
+              <div className="mb-4 flex items-center gap-2"><StatusBadge status="implemented">hidden today</StatusBadge></div>
+              <ul className="space-y-3 text-[14px] text-paper/80">
+                <li><span className="text-paper">Amount.</span> Only a Pedersen commitment is public (perfectly hiding). The zero-knowledge proof shows it is within the limit, and the program verifies that on-chain without learning it.</li>
+                <li><span className="text-paper">Operation details.</span> Name, memo and, in private modes, the recipient are AES-256-GCM encrypted. Only parties the operator grants a key can read them.</li>
+              </ul>
+            </div>
+            <div className="bg-ink p-6">
+              <div className="mb-4 flex items-center gap-2"><StatusBadge status="failed">public today</StatusBadge></div>
+              <ul className="space-y-3 text-[14px] text-paper/80">
+                <li><span className="text-paper">Sender.</span> Every record is signed by the operator&apos;s key, and on Solana the operator&apos;s address pays the fees. All of one operator&apos;s records are linkable.</li>
+                <li><span className="text-paper">Timing.</span> Records carry a timestamp, and on-chain records have a slot.</li>
+                <li><span className="text-paper">Asset and category.</span> Both are public fields.</li>
+                <li><span className="text-paper">The limit.</span> The policy limit is public, so it reveals that the amount is at most that value.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-px border border-t-0 border-line bg-ink p-6">
+            <div className="mb-4 flex items-center gap-2"><StatusBadge status="planned">designs on the roadmap, not built</StatusBadge></div>
+            <ul className="grid gap-4 text-[14px] text-paper/80 md:grid-cols-3">
+              <li><span className="text-paper">Hidden asset type:</span> blinded asset tags with an asset-surjection proof, in the style of Confidential Assets. A record would prove its asset is one of an allowed set without naming it.</li>
+              <li><span className="text-paper">Unlinkable senders:</span> per-record one-time keys, a group-membership proof that the publisher is an authorized operator, and relayed fee payment so the Solana fee payer does not link records.</li>
+              <li><span className="text-paper">Timing:</span> publication in fixed epochs with timestamps rounded to the epoch, plus optional cover records to hide volume.</li>
+            </ul>
+            <p className="mt-5 text-[13px] text-mute">Each design is new cryptography that needs its own proofs, vectors and review. Until a design ships and is listed above as hidden, treat that information as public.</p>
+          </div>
         </div>
 
         <div className="mt-12 flex flex-wrap gap-3">

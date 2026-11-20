@@ -22,6 +22,7 @@ const TREE = `veilops/
 │   ├── proof-engine/   Pedersen commitments, range proofs, attestation
 │   ├── sdk/            createClient().process(): the 5-stage pipeline
 │   └── solana-adapter/ memo anchoring (experimental, devnet-tested)
+├── onchain/            veilops-verifier Solana program (on-chain ZK verification, devnet)
 ├── docs/               architecture, protocol, cryptography, security, guide, roadmap
 ├── examples/           runnable integrations
 ├── tests/              unit · integration · security (vitest)

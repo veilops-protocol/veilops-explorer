@@ -1,6 +1,6 @@
 {
   "name": "@veilops/website",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
@@ -10,12 +10,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@veilops/encryption": "0.1.1",
-    "@veilops/policy-engine": "0.1.1",
-    "@veilops/proof-engine": "0.1.1",
-    "@veilops/sdk": "0.1.1",
-    "@veilops/shared": "0.1.1",
-    "@veilops/solana-adapter": "0.1.1",
+    "@veilops/encryption": "0.2.0",
+    "@veilops/policy-engine": "0.2.0",
+    "@veilops/proof-engine": "0.2.0",
+    "@veilops/sdk": "0.2.0",
+    "@veilops/shared": "0.2.0",
+    "@veilops/solana-adapter": "0.2.0",
     "framer-motion": "12.43.0",
     "geist": "1.9.2",
     "lucide-react": "0.577.0",
