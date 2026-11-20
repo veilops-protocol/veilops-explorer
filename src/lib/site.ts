@@ -15,6 +15,7 @@ export const NAV = [
   { href: '/applications', label: 'Applications' },
   { href: '/explorer', label: 'Explorer' },
   { href: '/docs', label: 'Developers' },
+  { href: '/trust', label: 'Trust' },
   { href: '/github', label: 'GitHub' },
 ];
 

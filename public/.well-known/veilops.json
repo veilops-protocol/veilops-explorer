@@ -1,0 +1,20 @@
+{
+  "project": "VEILOPS",
+  "status": "experimental, not externally audited",
+  "website": "https://veilops.tech",
+  "github": "https://github.com/veilops-protocol",
+  "repositories": [
+    "https://github.com/veilops-protocol/veilops",
+    "https://github.com/veilops-protocol/veilops-sdk",
+    "https://github.com/veilops-protocol/veilops-proof-engine",
+    "https://github.com/veilops-protocol/veilops-explorer",
+    "https://github.com/veilops-protocol/veilops-docs"
+  ],
+  "maintainers": [
+    { "github": "veilopsonline", "commitSigningKey": "SHA256:0q/tLTLWz3mdlXFnfCcJbDYeJ7nHnGu37TaBa/h96m8", "keyType": "ssh-ed25519" }
+  ],
+  "security": "https://github.com/veilops-protocol/veilops/security/advisories/new",
+  "solana": { "cluster": "devnet", "anchorKey": "9kpS3zvBWmA5jtatwPd4HvbJ1PgazbsBpxQA38grYQie", "mainnet": null },
+  "social": { "x": null, "telegram": null, "discord": null },
+  "note": "Any channel not listed here is not official. Changes to this file are only valid in a signed commit to veilops-protocol/veilops."
+}

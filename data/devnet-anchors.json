@@ -1,0 +1,8 @@
+{
+  "cluster": "devnet",
+  "memoProgram": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+  "signer": "9kpS3zvBWmA5jtatwPd4HvbJ1PgazbsBpxQA38grYQie",
+  "note": "Solana devnet only. Devnet SOL has no value. These transactions prove the anchoring path works end to end; they are not a mainnet deployment.",
+  "explorer": "https://explorer.solana.com/tx/<signature>?cluster=devnet",
+  "anchors": []
+}

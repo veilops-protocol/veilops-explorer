@@ -21,11 +21,13 @@ const TREE = `veilops/
 │   ├── policy-engine/  declarative policies, public + confidential rules
 │   ├── proof-engine/   Pedersen commitments, range proofs, attestation
 │   ├── sdk/            createClient().process(): the 5-stage pipeline
-│   └── solana-adapter/ memo anchoring (experimental, untested on-chain)
+│   └── solana-adapter/ memo anchoring (experimental; devnet scripts)
 ├── docs/               architecture, protocol, cryptography, security, guide, roadmap
 ├── examples/           runnable integrations
 ├── tests/              unit · integration · security (vitest)
-├── scripts/            sample dataset generator
+├── scripts/            samples, test vectors, reproduce.sh, devnet anchoring
+├── test-vectors/       reference vectors for veilops-range-v1
+├── verifiers/python/   independent standard-library verifier
 └── README · CONTRIBUTING · SECURITY · CODE_OF_CONDUCT · LICENSE`;
 
 export default function GitHub() {
@@ -59,21 +61,21 @@ export default function GitHub() {
           <pre className="overflow-x-auto bg-ink p-6 font-mono text-[12px] leading-[1.8] text-paper/85">{TREE}</pre>
           <div className="bg-ink p-6">
             <div className="label mb-4">Quality gates</div>
-            {[['TypeScript', 'tsc --noEmit across packages and website'], ['Lint', 'ESLint 9 + typescript-eslint'], ['Tests', 'vitest: unit, integration, security (tamper) suites'], ['Build', 'next build of the website'], ['Dependencies', 'npm audit + Dependabot']].map(([k, v]) => (
+            {[['TypeScript', 'tsc --noEmit across packages and website'], ['Lint', 'ESLint 9 + typescript-eslint'], ['Tests', 'vitest: unit, integration, security (tamper), reference vectors'], ['Verifier', 'independent Python implementation of the same vectors'], ['Reproducible', 'byte-identical package tarballs + SHA256SUMS'], ['Build', 'next build of the website'], ['Dependencies', 'npm audit + Dependabot']].map(([k, v]) => (
               <div key={k} className="grid grid-cols-[7rem_1fr] gap-3 border-b border-line/50 py-2.5 text-[13px] last:border-0"><span className="font-mono text-paper">{k}</span><span className="text-mute">{v}</span></div>
             ))}
-            <p className="mt-5 text-[13px] leading-relaxed text-mute">No stars, forks, releases or audits are shown here because none exist yet. That is the point.</p>
+            <p className="mt-5 text-[13px] leading-relaxed text-mute">No stars, forks or audits are shown here because none exist yet. That is the point.</p>
           </div>
         </div>
         <div className="mt-16 border border-line p-6 sm:p-8">
           <div className="label mb-5">How to check this project is genuine</div>
           <ol className="grid gap-4 text-[14px] leading-relaxed text-paper/80 md:grid-cols-2">
             <li><span className="font-mono text-jade">01</span> The organization <span className="font-mono">github.com/{SITE.githubOrg}</span> links to veilops.tech, and this site links back to it, both ways.</li>
-            <li><span className="font-mono text-jade">02</span> Clone the monorepo and run <span className="font-mono">npm test</span>: 31 unit, integration and tamper tests exercise the real cryptography.</li>
+            <li><span className="font-mono text-jade">02</span> Clone the monorepo and run <span className="font-mono">npm test</span>: 74 unit, integration, tamper and reference-vector tests exercise the real cryptography, and a second, independent Python implementation checks the same vectors.</li>
             <li><span className="font-mono text-jade">03</span> Every proof in the explorer can be re-verified in your browser with the same open-source code, and the deliberately tampered samples fail.</li>
             <li><span className="font-mono text-jade">04</span> CI, CodeQL and dependency audits run in public on every change. Their badges link to the actual runs.</li>
             <li><span className="font-mono text-jade">05</span> Security reports go through GitHub private advisories. See <a className="underline decoration-line underline-offset-4" href="/.well-known/security.txt">security.txt</a>.</li>
-            <li><span className="font-mono text-jade">06</span> We state what is missing: no external audit, no mainnet deployment and no npm packages yet. Treat any claim otherwise as not coming from this project.</li>
+            <li><span className="font-mono text-jade">06</span> We state what is missing: no external audit, no mainnet deployment and no npm packages yet. Treat any claim otherwise as not coming from this project. All checks are listed on the <a className="underline decoration-line underline-offset-4" href="/trust">trust page</a>.</li>
           </ol>
         </div>
         <div className="mt-10 flex flex-wrap gap-3">

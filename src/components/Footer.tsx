@@ -7,7 +7,7 @@ import { SITE, githubUrl } from '@/lib/site';
 const COLS: [string, [string, string][]][] = [
   ['Protocol', [['/protocol', 'Architecture'], ['/technology', 'Technology'], ['/applications', 'Applications'], ['/roadmap', 'Roadmap']]],
   ['Use it', [['/verify', 'Verify a proof'], ['/explorer', 'Explorer'], ['/app', 'Dashboard'], ['/docs', 'Documentation']]],
-  ['Source', [['/github', 'Repositories'], ['/docs#security', 'Security model'], ['/docs#trust', 'Trust assumptions'], ['/docs#status', 'Implementation status']]],
+  ['Source', [['/github', 'Repositories'], ['/trust', 'Trust & verification'], ['/docs#security', 'Security model'], ['/docs#trust', 'Trust assumptions'], ['/docs#status', 'Implementation status']]],
 ];
 
 export function Footer() {
