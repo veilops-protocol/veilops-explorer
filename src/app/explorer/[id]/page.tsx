@@ -6,6 +6,7 @@ import { Kv, StatusBadge, Label } from '@/components/ui';
 import { VerifyPlayground } from '@/components/VerifyPlayground';
 import { LocalRecord } from '@/components/LocalRecord';
 import { fmtAmount, fmtTime, kb } from '@/lib/format';
+import anchorsFile from '../../../../data/devnet-anchors.json';
 
 export function generateStaticParams() { return dataset().records.map(e => ({ id: e.record.operationId })); }
 export const dynamicParams = true;
@@ -21,6 +22,7 @@ export default async function OperationPage({ params }: { params: Promise<{ id: 
   }
   const r = e.record;
   const pol = dataset().policies.find(p => p.id === r.policy.id);
+  const anchor = (anchorsFile.anchors as { operationId: string; signature: string; slot: number | null }[]).find(a => a.operationId === r.operationId);
   return (
     <section className="page pt-36">
       <Link href="/explorer" className="label hover:text-paper">← Explorer</Link>
@@ -50,6 +52,7 @@ export default async function OperationPage({ params }: { params: Promise<{ id: 
           <Kv k="Commitment" v={r.amountCommitment || '—'} />
           <Kv k="Envelope digest" v={r.envelopeDigest} />
           <Kv k="Attested by" v={r.attestation.publicKey} />
+          {anchor && <Kv k="Solana devnet" v={<a className="text-jade underline decoration-jade/40 underline-offset-4 hover:decoration-jade" href={`https://explorer.solana.com/tx/${anchor.signature}?cluster=devnet`} target="_blank" rel="noreferrer">anchored · slot {anchor.slot ?? '?'} · {anchor.signature.slice(0, 12)}…</a>} />}
         </div>
       </div>
 

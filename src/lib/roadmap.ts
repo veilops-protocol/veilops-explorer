@@ -4,7 +4,7 @@ export const ROADMAP: { phase: string; title: string; summary: string; badge: 'i
   { phase: '02', title: 'Proof infrastructure', summary: 'Proof generation, verification and policy engine integration.', badge: 'planned', label: 'planned',
     items: [['Aggregated / succinct range proofs (e.g. Bulletproofs) to cut proof size', 'planned'], ['Proof generation in a Web Worker', 'planned'], ['Richer policy predicates (per-period totals, allow-lists)', 'planned'], ['Live indexer replacing the sample dataset', 'planned']] },
   { phase: '03', title: 'Solana integration', summary: 'Devnet testing, supported confidential-transfer integrations and operation lifecycle.', badge: 'planned', label: 'planned',
-    items: [['Devnet testing of memo anchoring', 'planned'], ['Anchor registry program for record digests', 'planned'], ['Token-2022 confidential transfer integration where supported', 'planned'], ['Wallet connection (only once there is something to sign)', 'planned']] },
+    items: [['Devnet testing of memo anchoring', 'done'], ['Anchor registry program for record digests', 'planned'], ['Token-2022 confidential transfer integration where supported', 'planned'], ['Wallet connection (only once there is something to sign)', 'planned']] },
   { phase: '04', title: 'Applications', summary: 'Treasury, payroll and selective disclosure workflows.', badge: 'planned', label: 'planned',
     items: [['Multi-signer treasury workflow', 'planned'], ['Batch payroll with per-recipient envelopes', 'planned'], ['Auditor portal for scoped disclosure', 'planned']] },
   { phase: '05', title: 'Security and ecosystem', summary: 'External review, security testing, developer integrations and expanded infrastructure.', badge: 'planned', label: 'planned',

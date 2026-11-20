@@ -20,7 +20,7 @@ export const LAYERS: { key: string; name: string; pkg: string; status: Status; s
   { key: 'verify', name: 'Verification', pkg: 'verifyRecord()', status: 'implemented', summary: 'A pure function anyone can run: proof, proof-id binding and the operator’s Ed25519 attestation.',
     detail: ['Runs identically in the browser and on a server (POST /api/verify).', 'Never throws on malformed input. It reports which check failed.', 'The Ed25519 signature proves who published a record. It is not a privacy proof.'], io: ['PublicRecord', 'VerifyReport'] },
   { key: 'solana', name: 'Solana integration', pkg: '@veilops/solana-adapter', status: 'experimental', summary: 'Anchors a record digest in an SPL Memo instruction. Confidential transfers are planned.',
-    detail: ['buildAnchorInstruction(record, signer) returns a transport-agnostic instruction for your wallet to sign.', 'Not yet exercised on devnet or mainnet from this project, and labelled untested.', 'Planned: Token-2022 confidential-transfer integration where supported, and an Anchor registry program.'], io: ['PublicRecord', 'Memo instruction'] },
+    detail: ['buildAnchorInstruction(record, signer) returns a transport-agnostic instruction for your wallet to sign.', 'Tested on devnet: six sample records are anchored and re-verified daily. Never used on mainnet.', 'Planned: Token-2022 confidential-transfer integration where supported, and an Anchor registry program.'], io: ['PublicRecord', 'Memo instruction'] },
 ];
 
 export function Architecture() {

@@ -4,5 +4,60 @@
   "signer": "9kpS3zvBWmA5jtatwPd4HvbJ1PgazbsBpxQA38grYQie",
   "note": "Solana devnet only. Devnet SOL has no value. These transactions prove the anchoring path works end to end; they are not a mainnet deployment.",
   "explorer": "https://explorer.solana.com/tx/<signature>?cluster=devnet",
-  "anchors": []
+  "anchors": [
+    {
+      "operationId": "op_011d9b3f4e234162",
+      "proofId": "prf_21d2eb29ea4015dadf4e",
+      "recordDigest": "e2eb8396b6a46c5992d850b88f51b3871c6011934425c59eda1d0bfe2937f695",
+      "memo": "veilops:veilops/0.1:prf_21d2eb29ea4015dadf4e:e2eb8396b6a46c5992d850b88f51b3871c6011934425c59eda1d0bfe2937f695",
+      "signature": "4Xs2W9RWE2r4HgE1FHwLn7qatSyKoypqWpXW8hVfm7qnbUzws8uDNKXYryybrmG9YQhnVRv8vS3fUnE3XuwiWuJE",
+      "slot": 524352545,
+      "blockTime": "2026-11-20T12:29:02.000Z"
+    },
+    {
+      "operationId": "op_c89827e7a02f5892",
+      "proofId": "prf_a7fb511d55d25aa34a88",
+      "recordDigest": "f98cf759c6180f92ad5e233621020cf3878c0f23ba9eb92904868eb319c67b70",
+      "memo": "veilops:veilops/0.1:prf_a7fb511d55d25aa34a88:f98cf759c6180f92ad5e233621020cf3878c0f23ba9eb92904868eb319c67b70",
+      "signature": "2xVKGk72nbB7fJRavG4o6rbvG32nvCQaZmZi4CrWJfeg8UrtBPm2otWhvJtbe1NWXikAPT3R4DUo9G7QqyKbYSwC",
+      "slot": 524352549,
+      "blockTime": "2026-11-20T12:29:03.000Z"
+    },
+    {
+      "operationId": "op_dcae0157dd71919c",
+      "proofId": "prf_01e3238c5ec7a397f8f4",
+      "recordDigest": "0a1efcb159760cdbdcbdd1ea14c47d7ee0532db3cf4c9178f214b3216c0e9a40",
+      "memo": "veilops:veilops/0.1:prf_01e3238c5ec7a397f8f4:0a1efcb159760cdbdcbdd1ea14c47d7ee0532db3cf4c9178f214b3216c0e9a40",
+      "signature": "4XmHxCh5foBbGx9tvvMwakhRcncQxsV4HDktZTuouAihC4coBd78ienHMDLSiDQcXkySg4rDYfm6sGf29nMgRJ8d",
+      "slot": 524352564,
+      "blockTime": "2026-11-20T12:29:07.000Z"
+    },
+    {
+      "operationId": "op_500a12f3824696a6",
+      "proofId": "prf_6496deb1c69d58c1e310",
+      "recordDigest": "7bedfc0a0e12b1b29192ac0b9f6526e17fbf7cc36806ce05f628676f94547824",
+      "memo": "veilops:veilops/0.1:prf_6496deb1c69d58c1e310:7bedfc0a0e12b1b29192ac0b9f6526e17fbf7cc36806ce05f628676f94547824",
+      "signature": "NNCooWQYf25rSXaxzzJVzoRWcWqFN9PDgarYMRmjfE5s9GsSyPikxG7dMsktLkMB9nvd8qYeqme6vEFr1irH4z2",
+      "slot": 524352568,
+      "blockTime": "2026-11-20T12:29:08.000Z"
+    },
+    {
+      "operationId": "op_42b2dbc4ea642c7a",
+      "proofId": "prf_6ade2c3fd579dc844f62",
+      "recordDigest": "af175dcc2f965fd2a3a136b2934a60a2be1603a23a235d02278b5d71dcf478b1",
+      "memo": "veilops:veilops/0.1:prf_6ade2c3fd579dc844f62:af175dcc2f965fd2a3a136b2934a60a2be1603a23a235d02278b5d71dcf478b1",
+      "signature": "4vFrkWYEtRpeshB9pKngsSd8BvbdXC4uYSDxJfvFVLSv1Cefyf3nWRsmkJCXwhnRZ3W2jJ9UQT2bRH6bgkQr2Zth",
+      "slot": 524352576,
+      "blockTime": "2026-11-20T12:29:09.000Z"
+    },
+    {
+      "operationId": "op_2645d747c954a7fd",
+      "proofId": "prf_b67bcf4886239776f932",
+      "recordDigest": "db0cd8a2ae5fce5b37be73318f2ec21d301a4191e5dac86f4baae8514af7507d",
+      "memo": "veilops:veilops/0.1:prf_b67bcf4886239776f932:db0cd8a2ae5fce5b37be73318f2ec21d301a4191e5dac86f4baae8514af7507d",
+      "signature": "668heYYZxgG8t34M3xMXxHQiBsaHzay6ZSMhqMTzkJavugAG5ZwnxUe8J5FCcMJL4k3LbbCGaDpzLrH9nhFrCiw2",
+      "slot": 524352580,
+      "blockTime": "2026-11-20T12:29:10.000Z"
+    }
+  ]
 }

@@ -21,7 +21,7 @@ const TREE = `veilops/
 │   ├── policy-engine/  declarative policies, public + confidential rules
 │   ├── proof-engine/   Pedersen commitments, range proofs, attestation
 │   ├── sdk/            createClient().process(): the 5-stage pipeline
-│   └── solana-adapter/ memo anchoring (experimental; devnet scripts)
+│   └── solana-adapter/ memo anchoring (experimental, devnet-tested)
 ├── docs/               architecture, protocol, cryptography, security, guide, roadmap
 ├── examples/           runnable integrations
 ├── tests/              unit · integration · security (vitest)
