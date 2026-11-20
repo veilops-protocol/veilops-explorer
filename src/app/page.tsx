@@ -92,8 +92,8 @@ export default function Home() {
       {/* 08 — developers */}
       <section className="page py-28 sm:py-40" aria-labelledby="dev">
         <SectionHead index="08" label="Developer ecosystem" title={<span id="dev">Build on privacy.</span>} />
-        <div className="mt-16 grid gap-px border border-line bg-line lg:grid-cols-[1.2fr_1fr]">
-          <Reveal className="bg-ink p-6 sm:p-10">
+        <div className="mt-16 grid grid-cols-1 gap-px border border-line bg-line lg:grid-cols-[1.2fr_1fr]">
+          <Reveal className="min-w-0 bg-ink p-6 sm:p-10">
             <Label>@veilops/sdk · TypeScript</Label>
             <pre className="mt-6 overflow-x-auto font-mono text-[12.5px] leading-[1.8] text-paper/85">{`import { createClient } from '@veilops/sdk';
 import { definePolicy } from '@veilops/policy-engine';

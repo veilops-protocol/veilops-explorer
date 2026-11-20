@@ -17,20 +17,20 @@ type Anchor = { operationId: string; proofId: string; signature: string; slot: n
 function Row({ n, title, status, children }: { n: string; title: string; status: React.ReactNode; children: React.ReactNode }) {
   return (
     <Reveal>
-      <article className="grid gap-5 border-b border-line py-10 lg:grid-cols-12">
+      <article className="grid grid-cols-1 gap-5 border-b border-line py-10 lg:grid-cols-12">
         <div className="font-mono text-[12px] text-jade lg:col-span-1">{n}</div>
-        <div className="lg:col-span-3">
+        <div className="min-w-0 lg:col-span-3">
           <h2 className="text-xl text-paper">{title}</h2>
           <div className="mt-3">{status}</div>
         </div>
-        <div className="space-y-4 text-[14px] leading-relaxed text-paper/80 lg:col-span-8">{children}</div>
+        <div className="min-w-0 space-y-4 text-[14px] leading-relaxed text-paper/80 lg:col-span-8">{children}</div>
       </article>
     </Reveal>
   );
 }
 
 const Code = ({ children }: { children: string }) => (
-  <pre className="overflow-x-auto border border-line bg-ink-2/60 p-4 font-mono text-[12px] leading-[1.7] text-paper/85">{children}</pre>
+  <pre className="max-w-full overflow-x-auto whitespace-pre border border-line bg-ink-2/60 p-4 font-mono text-[12px] leading-[1.7] text-paper/85">{children}</pre>
 );
 
 export default function Trust() {
